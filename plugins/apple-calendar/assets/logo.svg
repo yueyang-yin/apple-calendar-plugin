@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Apple Calendar, a minimal red and white calendar symbol without a fixed date">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F9F9FA"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FF4A52"/>
+      <stop offset="1" stop-color="#FF343E"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".09"/>
+    </linearGradient>
+    <clipPath id="shape">
+      <rect x="32" y="32" width="960" height="960" rx="216"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#shape)">
+    <rect x="32" y="32" width="960" height="960" fill="url(#paper)"/>
+    <rect x="32" y="32" width="960" height="247" fill="url(#header)"/>
+    <path d="M32 279H992" stroke="#E92732" stroke-opacity=".12" stroke-width="2"/>
+    <g fill="#252527">
+      <circle cx="224" cy="430" r="18"/><circle cx="320" cy="430" r="18"/><circle cx="416" cy="430" r="18"/><circle cx="512" cy="430" r="18"/><circle cx="608" cy="430" r="18"/><circle cx="704" cy="430" r="18"/><circle cx="800" cy="430" r="18"/>
+      <circle cx="224" cy="550" r="18"/><circle cx="320" cy="550" r="18"/><circle cx="416" cy="550" r="18"/><circle cx="512" cy="550" r="18"/><circle cx="608" cy="550" r="18"/><circle cx="704" cy="550" r="18"/><circle cx="800" cy="550" r="18"/>
+      <circle cx="224" cy="670" r="18"/><circle cx="320" cy="670" r="18"/><circle cx="416" cy="670" r="18"/><circle cx="512" cy="670" r="18"/><circle cx="608" cy="670" r="18"/><circle cx="704" cy="670" r="18"/><circle cx="800" cy="670" r="18"/>
+      <circle cx="224" cy="790" r="18"/><circle cx="320" cy="790" r="18"/><circle cx="416" cy="790" r="18"/><circle cx="512" cy="790" r="18"/><circle cx="608" cy="790" r="18"/><circle cx="704" cy="790" r="18"/><circle cx="800" cy="790" r="18"/>
+    </g>
+  </g>
+  <rect x="34" y="34" width="956" height="956" rx="214" fill="none" stroke="url(#rim)" stroke-width="4"/>
+</svg>

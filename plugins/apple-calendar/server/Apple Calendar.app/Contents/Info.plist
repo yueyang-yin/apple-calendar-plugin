@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>Apple Calendar 插件</string>
+	<key>CFBundleExecutable</key>
+	<string>AppleCalendarMCP</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yinyueyang.apple-calendar-plugin</string>
+	<key>CFBundleName</key>
+	<string>Apple Calendar Plugin</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.2.0</string>
+	<key>CFBundleVersion</key>
+	<string>120</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Show the calendar event you requested in the native Calendar app.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Apple Calendar 插件需要读取和编辑日历，以按你的指令查询、新建、修改和删除日程，并查找空闲时间。</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Access calendars to manage events you request.</string>
+</dict>
+</plist>

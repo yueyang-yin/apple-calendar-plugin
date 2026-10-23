@@ -1,0 +1,27 @@
+{
+  "name": "apple-calendar",
+  "version": "1.2.0",
+  "description": "View and manage calendars and events on your Mac.",
+  "homepage": "https://github.com/yueyang-yin/apple-calendar-plugin",
+  "repository": "https://github.com/yueyang-yin/apple-calendar-plugin",
+  "author": {
+    "name": "Yinyue Yang"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Apple Calendar",
+    "shortDescription": "Manage your Mac's calendar",
+    "longDescription": "Connect to Apple Calendar on this Mac to browse calendars, search events, and manage appointments, reminders, complex recurring schedules, and free time. Resolve places through Apple Maps and save native map locations with local read-back verification. Open saved events in Calendar, open places or directions in Maps, and estimate journeys to check travel time between appointments. Works with accounts synced through macOS, including iCloud, Exchange, and CalDAV. Calendar access is required for events, map queries require internet access, and opening events requires macOS Automation access. Meeting invitations and responses are not supported.",
+    "developerName": "Yinyue Yang",
+    "category": "Productivity",
+    "capabilities": [],
+    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/logo.png",
+    "defaultPrompt": [
+      "Show me today's schedule.",
+      "Find a free hour on my calendar next week.",
+      "Create a new event in a calendar I choose."
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "apple-calendar": {
+      "command": "bash",
+      "args": ["${PLUGIN_ROOT}/scripts/run.sh"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}
