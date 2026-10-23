@@ -2,8 +2,6 @@
 
 A local macOS plugin for Codex that reads and manages events through Apple's EventKit framework. It works with calendars synced to Apple Calendar, including iCloud, Exchange, CalDAV, and local calendars.
 
-![Apple Calendar](plugins/apple-calendar/assets/logo.png)
-
 The plugin provides 15 MCP tools for calendar search, event creation and editing, recurring schedules, free-time lookup, native map locations, route estimates, and opening events in Calendar or Maps. See the [plugin guide](plugins/apple-calendar/README.md) for the full behavior, permissions, and limits.
 
 ## Requirements
