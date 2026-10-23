@@ -43,11 +43,13 @@ def write_archive(destination, entries):
 def main():
     manifest = read_json(PLUGIN / "plugin.json")
     compatibility = read_json(PLUGIN / ".codex-plugin/plugin.json")
-    for field in ("name", "version", "description", "author"):
+    for field in ("name", "version", "description", "author", "license"):
         if manifest[field] != compatibility[field]:
             raise ValueError(f"Plugin manifests disagree on {field}")
     if manifest["extensions"]["com.openai"]["interface"] != compatibility["interface"]:
         raise ValueError("Plugin interface metadata differs between manifests")
+    if (ROOT / "LICENSE").read_bytes() != (PLUGIN / "LICENSE").read_bytes():
+        raise ValueError("Repository and plugin licenses differ")
     portable_mcp = read_json(PLUGIN / "mcp.json")["mcpServers"]
     legacy_mcp = read_json(PLUGIN / ".mcp.json")["mcpServers"]
     if {name: {key: value for key, value in server.items() if key != "type"}
@@ -69,7 +71,7 @@ def main():
     write_archive(standalone, [(path, f"apple-calendar/{path.relative_to(PLUGIN).as_posix()}")
                                for path in plugin_files])
     marketplace_files = plugin_files + list(files_under(ROOT / ".agents")) + [
-        ROOT / "README.md", ROOT / ".gitignore", Path(__file__).resolve(),
+        ROOT / "README.md", ROOT / "LICENSE", ROOT / ".gitignore", Path(__file__).resolve(),
         ROOT / f"docs/releases/{version}.md",
     ]
     bundled = DIST / f"Apple-Calendar-Marketplace-{version}.zip"

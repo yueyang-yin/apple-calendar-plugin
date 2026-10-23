@@ -85,3 +85,7 @@ The build script compiles the Swift source, ad hoc signs the native app, and run
 The source, compatibility manifest, and portable manifest live in `plugins/apple-calendar/`. The repository marketplace is `.agents/plugins/marketplace.json`. The included app binary targets Apple Silicon and macOS 14; this does not establish testing on every macOS version or Intel hardware.
 
 See [version 1.2.0 release notes](docs/releases/1.2.0.md) for the distribution contents. This is an independent integration, not an Apple or OpenAI product.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

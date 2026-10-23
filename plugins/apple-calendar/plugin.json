@@ -5,6 +5,7 @@
   "description": "View and manage calendars and events on your Mac.",
   "homepage": "https://github.com/yueyang-yin/apple-calendar-plugin",
   "repository": "https://github.com/yueyang-yin/apple-calendar-plugin",
+  "license": "MIT",
   "author": {
     "name": "Yinyue Yang"
   },

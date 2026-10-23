@@ -169,3 +169,7 @@ Both plugin manifests use the same static PNG. The package contains no animated 
 - [MCP specification: stdio transport](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)
 
 This is an independent integration, not an Apple or OpenAI product.
+
+## License
+
+This plugin is licensed under the [MIT License](LICENSE).
