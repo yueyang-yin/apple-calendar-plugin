@@ -2,6 +2,27 @@
 
 A local Codex plugin for the native macOS calendar database, powered by Apple's EventKit framework. Includes a static calendar cover with a red header, white rounded square and neutral dot grid, without fixed dates or weekday labels.
 
+## Compared with OpenAI's iCloud Calendar plugin
+
+This independent plugin accesses calendars synced to a Mac through EventKit, including iCloud, Exchange, CalDAV, and local calendars. OpenAI's **iCloud Calendar** (`icloud-calendar`) connects to Apple-hosted iCloud calendars. An Exchange or local calendar shown in Apple's Calendar app is outside that official plugin's scope.
+
+Checked on **October 29, 2026**, against this plugin's **1.2.0** source and OpenAI's **1.0.3** manifest plus the official tool descriptions and input schemas available in this session. Features may change. Interface inspection does not prove live write behavior, other-device sync, or availability on every client; no such tests were run for this comparison.
+
+| Area | This plugin | OpenAI's iCloud Calendar |
+| --- | --- | --- |
+| Access and setup | Local macOS 14+ Swift MCP process with native calendar permission; bundled Apple Silicon executable. Uses accounts already configured on the Mac. | Connected iCloud account through the official connector; its package does not declare a local EventKit executable. OpenAI controls client/account availability. |
+| Basic events and recurrence | Personal-event search and editing, alerts, all-day dates, time zones, and daily/weekly/monthly/yearly recurrence with explicit occurrence scopes. Also offers week-of-year and day-of-year filters. | Event search and editing, alerts, all-day dates, time zones, and daily/weekly/monthly/yearly recurrence with explicit occurrence scopes. No week-of-year or day-of-year input is exposed. |
+| Collaboration | Attendees are read-only; invitation creation/responses and editing/deleting events with attendees are blocked. | Invite guests, change attendees, update/cancel organized meetings, and accept/tentatively accept/decline invitations; notifications may be sent. |
+| Contacts and attachments | No contact or attachment tools. | Search/read iCloud contacts and download event attachments. Attachment add/replace/remove is limited to one-time events without attendees; removal requires a managed attachment. External attachment links cannot be downloaded. |
+| Maps and travel | Native place search and coordinate-backed event locations, route estimates, travel-gap/conflict checks, and Calendar/Maps app handoff. | Text `location` input; no dedicated place-search, structured-coordinate, routing, travel-check, or Mac app-handoff tool is exposed. |
+| Availability | Dedicated free-time calculation across selected synced calendars, up to 31 days; no remote attendee free/busy. | No dedicated free-time tool is exposed; callers can reason from searched events. |
+| Event search | Up to 366 days and 200 results per page; offset pagination. | Up to 93 days and 100 occurrences; no cursor. Narrow the date range or calendar selection when `has_more` is true. |
+| Change checks | Read back create/update saves and verify native coordinates when present; remote sync remains unverified. | Requires the latest `expected_etag` for event updates/deletions, invitation responses, and attachment mutations; uncertain outcomes require reading before retrying. |
+
+Use the official plugin for iCloud collaboration, contacts, and attachments. Use this plugin for multiple calendar accounts on a Mac and native scheduling/map workflows. Both can reach the same synced iCloud calendar; select the intended plugin and account, and obtain fresh IDs through that plugin. Installing both does not migrate or duplicate calendars. This local package still requires a Mac host and does not run directly on iOS or the web.
+
+Sources: **iCloud Calendar**, authored by **OpenAI**, in the [official plugin directory](https://chatgpt.com/plugins), and its exposed `search_events`, `create_event`, `update_event`, `respond_event`, contact, and attachment tool schemas. See OpenAI's [plugin availability documentation](https://learn.chatgpt.com/docs/plugins) and this package's [tool schemas](server/Sources/Tools.swift), [calendar implementation](server/Sources/CalendarService.swift), and [recurrence validation](server/Sources/Recurrence.swift). The [repository README](https://github.com/yueyang-yin/apple-calendar-plugin#compared-with-openais-icloud-calendar-plugin) contains the fuller comparison.
+
 ## Requirements
 
 - macOS 14 or newer, with a local Codex desktop session.
